@@ -2,7 +2,10 @@ FROM quay.io/projectquay/golang:1.20 as builder
 
 WORKDIR /go/src/app
 COPY . .
-RUN make build
+ARG TARGETOS
+ARG CGO_ENABLED
+RUN make build TARGETARCH=$TARGETARCH CGO_ENABLED=$CGO_ENABLED
+
 
 FROM scratch
 WORKDIR /
