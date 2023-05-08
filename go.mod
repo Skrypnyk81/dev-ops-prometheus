@@ -1,4 +1,4 @@
-module github.com/Skrypnyk81/Dev-ops-prometheus
+module github.com/Skrypnyk81/dev-ops-prometheus
 
 go 1.20
 
