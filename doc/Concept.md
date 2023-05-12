@@ -6,7 +6,7 @@
 |    k3d   | Creates Kubernetes clusters using Docker containers. Can create clusters with multiple nodes. Is a good choice for developers who want to create a fast and lightweight Kubernetes environment locally.  | Fast and lightweight: K3d creates Kubernetes clusters using Docker containers, which makes it very fast and lightweight. Flexible: K3d can create clusters with multiple nodes, which makes it a good choice for developers who want to create a production-like Kubernetes environment locally. Extensible: K3d is extensible, so you can customize it to match your specific needs. Conformant: K3d is a CNCF-certified conformant Kubernetes installer, which means that it meets the Kubernetes standard. Easy to use: K3d is easy to use, even for beginners. Well-supported: K3d is well-supported by a large community of users and developers. | Not as widely used as minikube or kind: K3d is not as widely used as minikube or kind, which means that there may be fewer resources available for troubleshooting and support. Some features are not yet implemented: K3d is a relatively new tool, so some features are not yet implemented. |
 
 # Demo video
-
+[![asciicast](https://asciinema.org/a/584565.svg)](https://asciinema.org/a/584565)
 
 # Recomendation 
 I would recommend K3d for a startup. It is a fast, lightweight, and easy-to-use tool that can be used to create a production-like Kubernetes environment locally. It is also well-supported by a large community of users and developers.
