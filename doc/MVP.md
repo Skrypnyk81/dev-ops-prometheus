@@ -4,9 +4,9 @@ In the web GUI of ArgoCD add new app
 <img width="829" alt="image" src="https://github.com/Skrypnyk81/dev-ops-prometheus/assets/24361470/988a38a7-c200-4167-bef9-8c620ed4fbea">
 
 Insert Application Name and select default for Project Name
-<img width="1123" alt="image" src="https://github.com/Skrypnyk81/dev-ops-prometheus/assets/24361470/430d930d-09a4-4dc6-82b3-d97b947cc283">
+<img width="1144" alt="image" src="https://github.com/Skrypnyk81/dev-ops-prometheus/assets/24361470/f0fc9c56-ed4d-441f-b87d-ce099fd047bf">
 
-In Source space insert Repository URL to track, revision and path fo helm chart
+In Source space insert Repository URL to track your repository, revision and path of helm chart
 <img width="1145" alt="image" src="https://github.com/Skrypnyk81/dev-ops-prometheus/assets/24361470/1b0a0833-eeb5-4f37-b622-1ffc3aef3eb1">
 
 In Destination choose Cluster URL by default and write name of namespace
@@ -14,3 +14,14 @@ In Destination choose Cluster URL by default and write name of namespace
 
 In Sync Options check 
 <img width="896" alt="image" src="https://github.com/Skrypnyk81/dev-ops-prometheus/assets/24361470/f1b04734-9c9c-437c-a272-2329960e14c7">
+
+When you click on the application demo for the first time, you need to synchronize the application with the repository
+<img width="1038" alt="image" src="https://github.com/Skrypnyk81/dev-ops-prometheus/assets/24361470/b62381fa-2a03-4caa-9f26-b837bc30ec86">
+
+After synchronizing the application, you can see the health status of the cluster
+<img width="1202" alt="image" src="https://github.com/Skrypnyk81/dev-ops-prometheus/assets/24361470/a70bfbca-8d5b-4bc1-a4e0-b93939d47e10">
+
+Now, when you change the repository, the change is automatically applied to the cluster. 
+
+## Conclusion
+ArgoCD is a popular open-source tool for managing and deploying applications on Kubernetes. It provides a user-friendly web interface for managing the entire deployment lifecycle of applications, from defining the desired state to tracking and rolling back changes. ArgoCD offers features such as automatic synchronization with a Git repository, application diff and synchronization, application rollbacks, and the ability to manage multiple clusters from a single control plane. With its ease of use and powerful functionality, ArgoCD is a valuable tool for managing complex Kubernetes deployments and is widely used in enterprise environments.
