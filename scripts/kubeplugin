@@ -6,7 +6,7 @@ NAMESPACE=$2
 COMMAND=$3
 
 # Retrieve resource usage statistics from Kubernetes
-kubectl $NAMESPACE $RESOURCE_TYPE -n $COMMAND | tail -n +2 | while read line
+kubectl $NAMESPACE $RESOURCE_TYPE $COMMAND | tail -n +2 | while read line
 do
   # Extract CPU and memory usage from the output
   NAME=$(echo $line | awk '{print $1}')
