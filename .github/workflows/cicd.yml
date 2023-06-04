@@ -29,6 +29,7 @@ jobs:
       - name: Build&Push
         env:
           APP: "dev-ops-prometheus"
+          REGISTRY: "ghcr.io"
         run: make image push
 
   cd:
