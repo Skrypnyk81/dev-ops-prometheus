@@ -3,7 +3,7 @@ name: BITCOIN-CICD
 on:
   push:
     branches:
-      - develop
+      - 'develop'
 
 jobs:
   ci:
@@ -19,7 +19,7 @@ jobs:
       - name: Run test
         run: make test
 
-      - name: Docker Hub Login
+      - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
