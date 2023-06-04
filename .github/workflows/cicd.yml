@@ -1,6 +1,9 @@
 name: BITCOIN-CICD
 
-on: push
+on:
+  push:
+    branches:
+      - develop
 
 jobs:
   ci:
@@ -19,13 +22,14 @@ jobs:
       - name: Docker Hub Login
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build&Push
         env:
-          APP: "kbot"
-          REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
+          APP: "dev-ops-prometheus"
+          REGISTRY: ${{ secrets.GITHUB_TOKEN }}
         run: make image push
 
   cd:
