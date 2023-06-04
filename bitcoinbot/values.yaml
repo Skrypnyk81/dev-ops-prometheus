@@ -7,7 +7,7 @@ image:
   repository: skrypnyk81/dev-ops-prometheus
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.2-31b5d0f"
+  tag: "v1.0.2-c5138ef"
   arch: ""
 secret:
   name: "kbot"
