@@ -1,8 +1,8 @@
 APP=$(shell basename $(shell git remote get-url origin))
-REGISTRY=skrypnyk81
+REGISTRY=ghcr.io/skrypnyk81
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
-TARGETARCH=arm64
+TARGETARCH=amd64
 
 CGO_ENABLED=0
 linux:
