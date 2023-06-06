@@ -7,7 +7,7 @@ image:
   repository: "skrypnyk81"
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v.1.0.3-675682d"
+  tag: "v.1.0.3-88d8f25"
   arch: ""
   os: ""
 secret:
