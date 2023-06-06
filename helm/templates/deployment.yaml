@@ -13,7 +13,6 @@ spec:
       labels:
         {{- include "helm.selectorLabels" . | nindent 8 }}
     spec:
-      serviceAccountName: {{ include "helm.serviceAccountName" . }}
       containers:
         - name: {{ .Chart.Name }}
           image: {{ .Values.image.repository }}/{{ .Chart.Name}}:{{ .Values.image.tag | default .Chart.AppVersion }}-{{ .Values.image.os | default "linux" }}-{{ .Values.image.arch | default "amd64"}}
@@ -27,7 +26,6 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
 
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
           livenessProbe:
             httpGet:
               path: /
