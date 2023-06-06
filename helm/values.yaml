@@ -4,12 +4,12 @@
 
 image:
   registry: "ghcr.io"
-  repository: ""
+  repository: "skrypnyk81"
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v.1.0.3-5a645c0"
-  arch: ""
-  os: ""
+  tag: "v.1.0.3-651e28f"
+  arch: "amd64"
+  os: "linux"
 secret:
   name: "kbot"
   env: "TELE_TOKEN"
