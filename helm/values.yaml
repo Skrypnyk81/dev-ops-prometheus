@@ -5,9 +5,9 @@ replicaCount: 1
 image:
   repository: "ghcr.io/skrypnyk81"
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v.1.0.3-cf9bbd6"
-  arch: "amd64"
-  os: "linux"
+  tag: "v.1.0.3-8695640"
+  arch: ""
+  os: ""
 secret:
   name: "kbot"
   env: "TELE_TOKEN"
