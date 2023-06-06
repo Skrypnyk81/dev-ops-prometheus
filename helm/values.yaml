@@ -4,7 +4,7 @@
 
 image:
   registry: "ghcr.io"
-  repository: "skrypnyk"
+  repository: skrypnyk
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v.1.0.3-d31dac4"
