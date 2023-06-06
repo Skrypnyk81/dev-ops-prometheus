@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: ""
+  repository: "ghcr.io/skrypnyk81"
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v.1.0.3-acfc468"
   arch: ""
