@@ -4,7 +4,7 @@
 replicaCount: 1
 image:
   registry: "ghcr.io"
-  repository: ""
+  repository: "skrypnyk81"
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v.1.0.3-1c1bc1b"
@@ -14,3 +14,5 @@ secret:
   name: "kbot"
   env: "TELE_TOKEN"
   key: "token"
+securityContext:
+  privileged: true
