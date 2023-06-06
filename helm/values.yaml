@@ -3,13 +3,13 @@
 # Declare variables to be passed into your templates.
 
 image:
-  registry: "ghcr.io"
-  repository: "skrypnyk81"
+  registry: ghcr.io
+  repository: skrypnyk81
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v.1.0.3-651e28f"
-  arch: "amd64"
-  os: "linux"
+  arch: amd64
+  os: linux
 secret:
   name: "kbot"
   env: "TELE_TOKEN"
