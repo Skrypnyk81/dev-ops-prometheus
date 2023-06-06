@@ -4,10 +4,10 @@
 replicaCount: 1
 image:
   registry: "ghcr.io"
-  repository: "skrypnyk81"
+  repository: ""
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v.1.0.3-48e6a07"
+  tag: "v.1.0.3-dc86093"
   arch: ""
   os: ""
 secret:
