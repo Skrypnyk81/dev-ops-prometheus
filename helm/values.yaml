@@ -4,10 +4,10 @@
 
 image:
   registry: "ghcr.io"
-  repository: "skrypnyk81"
+  repository: ""
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v.1.0.3-88d8f25"
+  tag: "v.1.0.3-1c10cbb"
   arch: ""
   os: ""
 secret:
