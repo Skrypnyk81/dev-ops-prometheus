@@ -1,0 +1,16 @@
+# Default values for helm.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  registry: "ghcr.io"
+  repository: "ghcr.io/skrypnyk81"
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "v1.0.2-d537b1e"
+  arch: "amd64"
+  os: "linux"
+secret:
+  name: "kbot"
+  env: "TELE_TOKEN"
+  key: "token"
