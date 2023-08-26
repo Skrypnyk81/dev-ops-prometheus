@@ -45,16 +45,16 @@ to quickly create a Cobra application.`,
 			return
 		}
 		kbot.Handle("/start", func(c telebot.Context) error {
-			return c.Send(fmt.Sprintf("Hello I'm krypto bot version %s\nDigit bitcoin or ethereum", appVersion))
+			return c.Send(fmt.Sprintf("Hello I'm krypto bot version %s\nDigit Bitcoin or Ethereum", appVersion))
 		})
 		kbot.Handle(telebot.OnText, func(m telebot.Context) error {
 			log.Println(m.Message().Payload, m.Text())
 			payload := m.Text()
 			var result string
 			switch payload {
-			case "bitcoin":
+			case "Bitcoin":
 				result = getCrypto("bitcoin")
-			case "ethereum":
+			case "Ethereum":
 				result = getCrypto("ethereum")
 			}
 			return m.Send(result)
