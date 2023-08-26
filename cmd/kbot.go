@@ -52,9 +52,9 @@ to quickly create a Cobra application.`,
 			payload := m.Text()
 			var result string
 			switch payload {
-			case "bitcoin":
+			case "Bitcoin":
 				result = getCrypto("bitcoin")
-			case "ethereum":
+			case "Ethereum":
 				result = getCrypto("ethereum")
 			}
 			return m.Send(result)
