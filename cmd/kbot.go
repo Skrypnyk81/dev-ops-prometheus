@@ -88,15 +88,6 @@ func getCrypto(cry string) string {
 	err = json.NewDecoder(response.Body).Decode(&data)
 	if err != nil {
 		log.Fatalf("Error to read JSON %s", err)
-	}
-	priceUsd, err := strconv.ParseFloat(data.Data.PriceUsd, 64)
-	if err != nil {
-		log.Fatalf("Error converting priceUsd to float64: %s", err)
-	}
-	Change24H, err := strconv.ParseFloat(data.Data.Change24H, 64)
-	if err != nil {
-		log.Fatalf("Error converting priceUsd to float64: %s", err)
-	}
 	// Stampa i dati estratti dal JSON
 	return fmt.Sprintf("Symbol: %s\nPrice in USD: %.2f\nVariation of price in 24H: %.2f%%\n", data.Data.Symbol, priceUsd,
 		Change24H)
