@@ -9,6 +9,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/spf13/cobra"
@@ -17,7 +18,8 @@ import (
 
 var (
 	// TeleToken bot
-	TeleToken = os.Getenv("TELE_TOKEN")
+	TeleToken     = os.Getenv("TELE_TOKEN")
+	CoinCapAPIKey = os.Getenv("COINCAP_TOKEN")
 )
 
 // kbotCmd represents the kbot command
@@ -66,15 +68,20 @@ to quickly create a Cobra application.`,
 type Response struct {
 	// Definisci qui la struttura del JSON che vuoi estrarre
 	Data struct {
-		Symbol    string  `json:"symbol"`
-		PriceUsd  float64 `json:"priceUsd"`
-		Change24H float64 `json:"changePercent24Hr"`
+		Symbol    string `json:"symbol"`
+		PriceUsd  string `json:"priceUsd"`
+		Change24H string `json:"changePercent24Hr"`
 	} `json:"data"`
 }
 
 func getCrypto(cry string) string {
-	url := "https://api.coincap.io/v2/assets/"
-	url += cry
+	if CoinCapAPIKey == "" {
+		log.Fatalf("Please set COINCAP_API_KEY environment variable")
+	}
+
+	// Build URL for v3 API with search parameter
+	url := fmt.Sprintf("https://rest.coincap.io/v3/assets/%s?apiKey=%s", cry, CoinCapAPIKey)
+
 	// Effettua la richiesta GET alla URL
 	response, err := http.Get(url)
 	if err != nil {
@@ -88,9 +95,17 @@ func getCrypto(cry string) string {
 	if err != nil {
 		log.Fatalf("Error to read JSON %s", err)
 	}
+	priceUsd, err := strconv.ParseFloat(data.Data.PriceUsd, 64)
+	if err != nil {
+		log.Fatalf("Error converting priceUsd to float64: %s", err)
+	}
+	Change24H, err := strconv.ParseFloat(data.Data.Change24H, 64)
+	if err != nil {
+		log.Fatalf("Error converting priceUsd to float64: %s", err)
+	}
 
 	// Stampa i dati estratti dal JSON
-	return fmt.Sprintf("Symbol: %s\nPrice in USD: %.2f\nVariation of price in 24H: %.2f%%\n", data.Data.Symbol, data.Data.PriceUsd, data.Data.Change24H)
+	return fmt.Sprintf("Symbol: %s\nPrice in USD: %.2f\nVariation of price in 24H: %.2f%%\n", data.Data.Symbol, priceUsd, Change24H)
 }
 
 func init() {
