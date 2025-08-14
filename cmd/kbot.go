@@ -9,7 +9,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"strconv"
 	"time"
 
 	"github.com/spf13/cobra"
@@ -67,7 +66,7 @@ to quickly create a Cobra application.`,
 type Response struct {
 	// Definisci qui la struttura del JSON che vuoi estrarre
 	Data struct {
-		Symbol    string `json:"symbol"`
+		Symbol    string  `json:"symbol"`
 		PriceUsd  float64 `json:"priceUsd"`
 		Change24H float64 `json:"changePercent24Hr"`
 	} `json:"data"`
@@ -88,9 +87,10 @@ func getCrypto(cry string) string {
 	err = json.NewDecoder(response.Body).Decode(&data)
 	if err != nil {
 		log.Fatalf("Error to read JSON %s", err)
+	}
+
 	// Stampa i dati estratti dal JSON
-	return fmt.Sprintf("Symbol: %s\nPrice in USD: %.2f\nVariation of price in 24H: %.2f%%\n", data.Data.Symbol, priceUsd,
-		Change24H)
+	return fmt.Sprintf("Symbol: %s\nPrice in USD: %.2f\nVariation of price in 24H: %.2f%%\n", data.Data.Symbol, data.Data.PriceUsd, data.Data.Change24H)
 }
 
 func init() {
