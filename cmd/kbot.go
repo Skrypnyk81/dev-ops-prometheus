@@ -68,8 +68,8 @@ type Response struct {
 	// Definisci qui la struttura del JSON che vuoi estrarre
 	Data struct {
 		Symbol    string `json:"symbol"`
-		PriceUsd  string `json:"priceUsd"`
-		Change24H string `json:"changePercent24Hr"`
+		PriceUsd  float64 `json:"priceUsd"`
+		Change24H float64 `json:"changePercent24Hr"`
 	} `json:"data"`
 }
 
